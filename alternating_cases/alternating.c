@@ -66,6 +66,7 @@ int find_seq_length(char* str, int starting_index, int alternation)
     return total_seq_length;
 }
 
+// can use isupper as well
 int case_state(char eval_char)
 {
     // rudimentary case checker that expects an english character
