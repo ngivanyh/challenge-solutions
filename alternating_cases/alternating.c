@@ -8,8 +8,8 @@
 #define UPPERCASE 1
 #define LOWERCASE 0
 
-int find_seq_length(char* str, int starting_index, int alternation);
 int case_state(char eval_char);
+int find_seq_length(char* str, int starting_index, int alternation);
 
 int main(void)
 {
@@ -47,7 +47,7 @@ int find_seq_length(char* str, int starting_index, int alternation)
 
         repeat_amount = repeat_amount % alternation;
 
-        if (repeat_amount == 0)
+        if (!repeat_amount)
         {
             total_seq_length += alternation;
             expected_case_state = (expected_case_state) ? LOWERCASE : UPPERCASE;
@@ -60,7 +60,7 @@ int find_seq_length(char* str, int starting_index, int alternation)
     }
 
     // in case the whole loop doesn't break midway
-    if ((repeat_amount % alternation) == 0)
+    if (!(repeat_amount % alternation))
         total_seq_length += alternation;
 
     return total_seq_length;

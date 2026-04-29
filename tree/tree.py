@@ -28,7 +28,7 @@ class Node:
                 self.children[i + 1] = child
                 return (self.value, child.value)
 
-node_list = [int(n) for n in input().split(" ")]
+node_list = map(int, input().split())
 
 cur = tree = Node(node_list[0], None)
 connected_pairs = [] # without (n, 0) pairs
