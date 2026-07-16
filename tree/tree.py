@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self, value: int, parent: Node | None=None):
+    def __init__(self, value: int, parent=None):
         self.value = value
         self.parent = parent
 
@@ -20,7 +20,7 @@ class Node:
     def hasSpace(self):
         return False if (self.children is None) or (None not in self.children.values()) else True
 
-    def addChild(self, child: Node):
+    def addChild(self, child):
         if not self.hasSpace(): return None
 
         for i, val in enumerate(self.children.values()):
@@ -28,7 +28,7 @@ class Node:
                 self.children[i + 1] = child
                 return (self.value, child.value)
 
-node_list = map(int, input().split())
+node_list = list(map(int, input().split()))
 
 cur = tree = Node(node_list[0], None)
 connected_pairs = [] # without (n, 0) pairs
