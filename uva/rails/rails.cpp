@@ -5,36 +5,32 @@
 
 using namespace std;
 
-int get_block();
 bool eval(int n, int * seq);
 
 int main(void)
 {
-    while (get_block())
-        ;
-
-    return 0;
-}
-
-int get_block()
-{
-    int n;
-    cin >> n;
-    if (!n) return 0;
-    while (true)
+    while (1)
     {
-        int seq[n];
-        for (int & s : seq)
+        int n, i;
+        cin >> n;
+        if (!n) break;
+        while (1)
         {
-            cin >> s;
-            if (!s)
+            int seq[n];
+            for (i = 0; i < n; ++i)
+            {
+                cin >> seq[i];
+                if (!seq[i]) break;
+            }
+
+            if (i != n)
             {
                 cout << '\n';
-                return n;
+                break;
             }
-        }
 
-        cout << ((eval(n, seq)) ? "Yes" : "No") << '\n';
+            cout << ((eval(n, seq)) ? "Yes" : "No") << '\n';
+        }
     }
 
     return 0;
@@ -61,10 +57,9 @@ bool eval(int n, int * seq)
 
             if (sequence.top() != want)
                 return false;
-            sequence.pop();
         }
-        else if (sequence.top() == want)
-            sequence.pop();
+
+        sequence.pop();
     }
 
     return true;
