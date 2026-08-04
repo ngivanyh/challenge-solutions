@@ -29,7 +29,7 @@ int main(void)
                 break;
             }
 
-            cout << ((eval(n, seq)) ? "Yes" : "No") << '\n';
+            cout << (eval(n, seq) ? "Yes" : "No") << '\n';
         }
     }
 
@@ -55,8 +55,7 @@ bool eval(int n, int * seq)
                 }
             }
 
-            if (sequence.top() != want)
-                return false;
+            if (sequence.top() != want) return false;
         }
 
         sequence.pop();
