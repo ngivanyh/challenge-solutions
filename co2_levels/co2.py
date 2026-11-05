@@ -5,9 +5,9 @@ i, maxes = 2, []
 l, mr = 0, [1]
 
 while i < len(values):
-    print(i, l, mr, values[i], values[l], [values[v] for v in mr])
+    # print(i, l, mr, values[i], values[l], [values[v] for v in mr])
     if values[l] >= values[mr[0]]:
-        # print("l >= r")  
+        # print("l >= r")
         l = mr[-1]
         mr = [i]
     elif values[mr[-1]] == values[i]:

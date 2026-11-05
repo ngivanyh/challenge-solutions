@@ -13,7 +13,7 @@ def main():
     grid_dim = int(input())
     print(evaluate(expr, 0, grid_dim)[0])
 
-def evaluate(expr, idx, grid_dim, sum=0):
+def evaluate(expr, idx, grid_dim, sum = 0):
     if expr[idx] == '1':
         sum = grid_dim * grid_dim
     elif expr[idx] == '2':
