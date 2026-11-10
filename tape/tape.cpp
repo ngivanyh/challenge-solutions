@@ -17,7 +17,7 @@ int main(void)
         scanf("%lld", &max_occurence);
 
     char tape[tape_length + 1];
-    scanf("%d", tape);
+    scanf("%s", tape);
 
     ll result = 0;
     deque<char> pretty_tape;
